@@ -1,11 +1,11 @@
-import java.util.HashMap;
-import java.util.Scanner;
-import java.util.TreeMap;
+package evidencija;
+
+import java.util.*;
 
 public class EvidencijaPolaznika {
 
-    //    private static HashMap<String, Polaznik> map = new HashMap<>();
-    private static TreeMap<String, Polaznik> map = new TreeMap<>();
+        private static HashMap<String, Polaznik> map = new HashMap<>();
+//    private static TreeMap<String, Polaznik> map = new TreeMap<>();
 
     private static Scanner scanner = new Scanner(System.in);
 
@@ -68,7 +68,21 @@ public class EvidencijaPolaznika {
             return;
         }
 
-        map.forEach((k, v) -> System.out.println("\nPolaznik s e-mail adresom " + k + ": \n" + v));
+        List<Polaznik> lista = new ArrayList<>(map.values());
+
+        Collections.shuffle(lista);
+
+        System.out.println("\n*** Shuffeled list ***\n");
+        for (Polaznik p : lista) {
+            System.out.println(p);
+        }
+
+        Collections.reverse(lista);
+
+        System.out.println("\n*** Reversed list ***\n");
+        for (Polaznik p : lista) {
+            System.out.println(p);
+        }
     }
 
     private static String ucitajTekst(String poruka) {

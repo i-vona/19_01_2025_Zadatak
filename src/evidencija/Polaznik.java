@@ -1,10 +1,12 @@
+package evidencija;
+
 /*
 Napiši program za evidenciju polaznika na tečaju koji osigurava jedinstvenost e-mail adresa polaznika.
 Program treba omogućiti unos polaznika i njihovih podataka te provjeriti jesu li e-mail adrese jedinstvene.
 
-Koristi klasu Polaznik s atributima: ime, prezime i e-mail
-Koristi HashMap<String, Polaznik> za pohranu polaznika, gdje će ključ biti e-mail adresa, a vrijednost objekt klase Polaznik.
-Napravi glavnu klasu EvidencijaPolaznika koja sadrži main metodu.
+Koristi klasu evidencija.Polaznik s atributima: ime, prezime i e-mail
+Koristi HashMap<String, evidencija.Polaznik> za pohranu polaznika, gdje će ključ biti e-mail adresa, a vrijednost objekt klase evidencija.Polaznik.
+Napravi glavnu klasu evidencija.EvidencijaPolaznika koja sadrži main metodu.
 Omogući korisniku unos novih polaznika (ime, prezime, e-mail).
 Pri dodavanju novog polaznika, provjeri je li e-mail adresa već prisutna u evidenciji polaznika.
 Ako je e-mail adresa već prisutna, ispiši odgovarajuću poruku i ne dopusti unos polaznika s istom e-mail adresom.
@@ -33,8 +35,8 @@ public class Polaznik implements Comparable<Polaznik> {
     @Override
     public String toString() {
         return "Ime: " + ime +
-                "\nPrezime: " + prezime +
-                "\nE-mail: " + email;
+                ", Prezime: " + prezime +
+                ", E-mail: " + email;
     }
 
     @Override
